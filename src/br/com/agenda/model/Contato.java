@@ -1,6 +1,8 @@
 package br.com.agenda.model;
 
-import java.sql.Date;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
 
 public class Contato {
 	
@@ -8,6 +10,16 @@ public class Contato {
 	private String nome;
 	private int idade;
 	private Date dataCadastro;
+	
+	public void setDataCadastro(String dataCadastro) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            this.dataCadastro = dateFormat.parse(dataCadastro);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+	
 	public int getId() {
 		return id;
 	}
