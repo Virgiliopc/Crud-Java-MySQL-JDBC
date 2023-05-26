@@ -1,7 +1,7 @@
 package br.com.agenda.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
+import java.util.Date;
 
 import com.mysql.jdbc.PreparedStatement;
 
@@ -28,7 +28,7 @@ public class ContatoDao {
 			//Adicionar os valores esperados pela query
 			pstm.setString(1, contato.getNome());
 			pstm.setInt(2, contato.getIdade());
-			pstm.setDate(3, contato.getDataCadastro());
+			pstm.setDate(3, new java.sql.Date(contato.getDataCadastro().getTime()));
 			//Executar a query
 			pstm.execute();
 			System.out.println("Dados inseridos com sucesso.");
@@ -36,12 +36,15 @@ public class ContatoDao {
 			System.out.println("Erro ao inserir dados: " + e.getMessage());
 		} finally {
 			try {
-				if(pstm!=null && conn!=null) {
-					pstm.close();
-				}				
-			} catch(Exception e) {
-				e.printStackTrace();
-			}
+		        if (pstm != null) {
+		            pstm.close();
+		        }
+		        if (conn != null) {
+		            conn.close();
+		        }
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		    }
 		}
 	}
 }
