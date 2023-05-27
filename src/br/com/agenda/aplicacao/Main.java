@@ -14,7 +14,16 @@ public class Main {
 		contato.setIdade(78);
 		contato.setDataCadastro(new Date());
 		
-		contatoDao.save(contato);
+		//contatoDao.save(contato);
+		
+		//Atualizar o contato;
+		Contato c1 = new Contato();
+		c1.setNome("Maria Gabriela Dias Orlando");
+		c1.setIdade(37);
+		c1.setDataCadastro(new Date());
+		c1.setId(1); // o número que que está no database da PK
+		
+		contatoDao.update(c1);
 		
 		//Visualização dos dados do database
 		
