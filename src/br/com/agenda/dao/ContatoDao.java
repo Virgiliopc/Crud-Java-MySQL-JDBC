@@ -31,7 +31,7 @@ public class ContatoDao {
 			pstm.setDate(3, new java.sql.Date(contato.getDataCadastro().getTime()));
 			//Executar a query
 			pstm.execute();
-			System.out.println("Dados inseridos com sucesso.");
+			System.out.println("Dados salvos com sucesso.");
 		} catch (Exception e) {
 			System.out.println("Erro ao inserir dados: " + e.getMessage());
 		} finally {
