@@ -15,15 +15,19 @@ public class Main {
 		contato.setDataCadastro(new Date());
 		
 		//contatoDao.save(contato);
+				
+		//Deletar o contato peloo ID
 		
-		//Atualizar o contato;
+		contatoDao.deleteByID(5);
+		
+		
 		Contato c1 = new Contato();
-		c1.setNome("Maria Gabriela Dias Orlando");
-		c1.setIdade(37);
+		c1.setNome("João Dias");
+		c1.setIdade(39);
 		c1.setDataCadastro(new Date());
-		c1.setId(1); // o número que que está no database da PK
+		c1.setId(5); // o número que que está no database da PK
 		
-		contatoDao.update(c1);
+		//contatoDao.update(c1);
 		
 		//Visualização dos dados do database
 		
