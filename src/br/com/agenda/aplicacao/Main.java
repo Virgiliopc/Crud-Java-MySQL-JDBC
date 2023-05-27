@@ -15,6 +15,12 @@ public class Main {
 		contato.setDataCadastro(new Date());
 		
 		contatoDao.save(contato);
+		
+		//Visualização dos dados do database
+		
+		for(Contato c : contatoDao.getContatos()) {
+			System.out.println("Contato: "+ c.getNome());
+		}
 	}
 
 }
