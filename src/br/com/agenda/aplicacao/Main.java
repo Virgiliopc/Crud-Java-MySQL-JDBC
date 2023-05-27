@@ -1,15 +1,20 @@
 package br.com.agenda.aplicacao;
 
+import java.util.Date;
+import br.com.agenda.dao.ContatoDao;
 import br.com.agenda.model.Contato;
 
 public class Main {
 	
 	public static void main(String[] args) {
+		ContatoDao contatoDao = new ContatoDao();
 		
 		Contato contato = new Contato();
-		contato.setNome("Maria Gabriela");
-		contato.setId(55);
-		contato.setDataCadastro("22/05/2023");
+		contato.setNome("João Guilherme");
+		contato.setIdade(78);
+		contato.setDataCadastro(new Date());
+		
+		contatoDao.save(contato);
 	}
 
 }
