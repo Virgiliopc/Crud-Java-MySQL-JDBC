@@ -1,4 +1,4 @@
-package br.com.agenda.model;
+package main.br.com.agenda.model;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;

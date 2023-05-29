@@ -1,13 +1,14 @@
-package br.com.agenda.dao;
+package main.br.com.agenda.dao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Date;
 import java.util.List;
 import java.util.ArrayList;
 import com.mysql.jdbc.PreparedStatement;
-import br.com.agenda.factory.ConnectionFactory;
-import br.com.agenda.model.Contato;
+import main.br.com.agenda.factory.ConnectionFactory;
+import main.br.com.agenda.model.Contato;
 
 public class ContatoDao{
 
@@ -15,7 +16,44 @@ public class ContatoDao{
 	 * CRUD (CREATE - READ - UPDATE - DELETE)
 	 * 
 	 */
-
+	
+	public static Connection getConnetion() {
+		Connection conn = null;
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/crudcontrolarusuarios", "root", "");
+		} catch(Exception e) {
+			System.out.println(e);
+		}
+		return conn;
+	}
+	
+	public static List<Contato> getAllContatos() {
+		List<Contato> list = new ArrayList<Contato>();
+		
+		try {
+			Connection conn = getConnetion();
+			PreparedStatement ps = (PreparedStatement) conn.prepareStatement("SELECT * FROM contato");
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				Contato contato = new Contato();
+				contato.setId(rs.getInt("id"));
+				contato.setNome(rs.getString("nome"));
+				contato.setIdade(rs.getInt("idade"));
+				contato.setDataCadastro(rs.getDate("dataCadastro"));
+				
+				list.add(contato);
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		return list;
+	}
+	
+	
 	public void save(Contato contato) {
 		String sql = "INSERT INTO contatos(nome, idade, dataCadastro) VALUES (?,?,?)";
 
