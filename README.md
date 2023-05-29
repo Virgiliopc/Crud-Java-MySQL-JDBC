@@ -10,6 +10,9 @@
  ## 💻 Sobre o projeto
  Esse projeto foi desenvolvido com o objetivo de desenvolver uma aplicação em Java com MySQL JDBC.
  
+ ## 💻 Estrutura do Projeto
+ O projeto da agenda de contatos está estruturado de forma que há uma pasta para a Model(Contatos), outra pasta para a Dao(Data Acess Object), outra pasta para a ConnectionFactory(acesso ao database) e por fim a pasta para a Aplicação (testes das funcionalidades do CRUD).
+ 
  ### 🚧 Recursos Necessários
 
 * jdk 17;
@@ -41,6 +44,5 @@
 * Baixe e execute o Script SQL;
 * Abra o Xampp e clique em "Start em Apache e Mysql;
 * No projeto  - "Run on Server";
-* 
 
 ## 🚀 Let's code! 
