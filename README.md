@@ -4,11 +4,11 @@
     <img src="./img/project-java-jdbc.gif" max-width="600">    
 </p>
 
-# Crud Listar Usuários
+# Crud Listar Contatos
  Esta aplicação tem o objetivo de reproduzir as funcionalidades de um CRUD(acrônimo para Create, Read, Update e Delete) para uma agenda de contatos com Java, MySQLJDBC.
  
  ## 💻 Sobre o projeto
- Esse projeto foi desenvolvido com o objetivo de desenvolver uma aplicação em Java com MySQL JDBC.
+ Esse projeto foi desenvolvido com o objetivo de desenvolver uma aplicação de uma agenda de contatos em Java com MySQL JDBC.
  
  ## 💻 Estrutura do Projeto
  O projeto da agenda de contatos está estruturado de forma que há uma pasta para a Model(Contatos), outra pasta para a Dao(Data Acess Object), outra pasta para a ConnectionFactory(acesso ao database) e por fim a pasta para a Aplicação (testes das funcionalidades do CRUD).
