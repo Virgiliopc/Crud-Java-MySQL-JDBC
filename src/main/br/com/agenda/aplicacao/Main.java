@@ -18,15 +18,14 @@ public class Main {
 		contatoDao.save(contato);
 				
 		//Deletar o contato pelo ID		
-		contatoDao.deleteByID(7);
+		contatoDao.deleteByID(7); // deletar o contato João Guilherme que está duplicado
 		
-		// Update do Contato
+		// Update do Contato  - Editar o contato
 		Contato c1 = new Contato();
 		c1.setNome("João Guilherme de Souza");
 		c1.setIdade(39);
 		c1.setDataCadastro(new Date());
-		c1.setId(6); // o número que que está no database da PK
-		
+		c1.setId(6); // o número que que está no database da PK		
 		contatoDao.update(c1);
 		
 		//Visualização dos dados do database		
