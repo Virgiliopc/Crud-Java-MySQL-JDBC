@@ -4,7 +4,7 @@
     <img src="./img/project-java-jdbc.gif" max-width="600">    
 </p>
 
-# Crud Listar Contatos
+# Crud Agenda de Contatos
  Esta aplicação tem o objetivo de reproduzir as funcionalidades de um CRUD(acrônimo para Create, Read, Update e Delete) para uma agenda de contatos com Java, MySQLJDBC.
  
  ## 💻 Sobre o projeto
